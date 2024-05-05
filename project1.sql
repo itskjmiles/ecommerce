@@ -1,4 +1,3 @@
--- Create Customer table
 CREATE TABLE Customer (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -6,7 +5,6 @@ CREATE TABLE Customer (
     phone_number VARCHAR(20) NOT NULL
 );
 
--- Create CustomerAccount table
 CREATE TABLE CustomerAccount (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -15,14 +13,12 @@ CREATE TABLE CustomerAccount (
     FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
 
--- Create Product table
 CREATE TABLE Product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL
 );
 
--- Create Order table
 CREATE TABLE Order (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -31,7 +27,6 @@ CREATE TABLE Order (
     FOREIGN KEY (customer_id) REFERENCES Customer(id)
 );
 
--- Create OrderItem table
 CREATE TABLE OrderItem (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
